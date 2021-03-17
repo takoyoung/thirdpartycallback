@@ -1,5 +1,6 @@
 package com.h5game.thirdpartycallback;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,7 +16,9 @@ public class ThirdPartyCallback {
     private Class<?> cClass;
     private Object obj;
     private static ThirdPartyCallback _instance;
-    public int nCallbackId = -1;
+    private int nCallbackId = -1;
+
+    public Activity mActivity;
 
     public static final int CALL_SUCCESS = 1;
     public static final int CALL_FAILED = 2;
@@ -125,4 +128,6 @@ public class ThirdPartyCallback {
     public void setCallbackId(int callbackId){
         nCallbackId = callbackId;
     }
+
+    public int getCallbackId() { return nCallbackId; }
 }
