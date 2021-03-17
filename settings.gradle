@@ -1,0 +1,3 @@
+include ':app:thirdpartycallback'
+include ':app'
+rootProject.name = "thirdpartycallback"
