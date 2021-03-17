@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.thirdpartycallback"
+        applicationId "com.h5game.thirdpartycallback"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
