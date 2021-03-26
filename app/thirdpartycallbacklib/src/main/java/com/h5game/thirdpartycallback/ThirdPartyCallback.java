@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -130,4 +131,8 @@ public class ThirdPartyCallback {
     }
 
     public int getCallbackId() { return nCallbackId; }
+
+    public void log(String str){
+        Log.d("H5Game", str);
+    }
 }
