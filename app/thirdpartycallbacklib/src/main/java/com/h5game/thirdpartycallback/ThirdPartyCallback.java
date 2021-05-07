@@ -16,7 +16,6 @@ import java.util.Objects;
 public class ThirdPartyCallback {
     private Class<?> cClass;
     private Object obj;
-    private static ThirdPartyCallback _instance;
     private int nCallbackId = -1;
 
     public Activity mActivity;
@@ -46,22 +45,13 @@ public class ThirdPartyCallback {
         }
     };
 
-    public ThirdPartyCallback(){
+    public ThirdPartyCallback(String className){
         try{
-            cClass = Class.forName("h5game.JSBridge");
+            cClass = Class.forName(className);
             obj = cClass.newInstance();
-            _instance = this;
         } catch (ClassNotFoundException | IllegalArgumentException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
-    }
-
-    public static ThirdPartyCallback getInstance(){
-        if(_instance == null){
-            _instance = new ThirdPartyCallback();
-        }
-
-        return _instance;
     }
 
     private Method GetMethod(String methodName, Class<?>... parameterTypes){
